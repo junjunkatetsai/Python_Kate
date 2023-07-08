@@ -26,9 +26,9 @@ def playgame():
         print(f'您共猜了{count}次')
 
 while True:
-    playgame():
-    play_again = input('再玩一次( Y / N )')
-    if not(play_again == y):
+    playgame()
+    play_again = input('再玩一次(Y/N)')
+    if not(play_again == 'Y'):
         break
 
 print('遊戲結束')
