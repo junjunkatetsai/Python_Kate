@@ -85,7 +85,12 @@ dataFrame['啟始時間'] = pd.to_datetime(dataFrame['啟始時間'])
 dataFrame['結束時間'] = pd.to_datetime(dataFrame['結束時間'])
 dataFrame['啟始時間'] = dataFrame['啟始時間'].dt.strftime('%Y-%m-%d日-%H點')
 dataFrame['結束時間'] = dataFrame['結束時間'].dt.strftime('%Y-%m-%d日-%H點')
+dataFrame['最高溫度'] = dataFrame['最高溫度'].astype(int)
+dataFrame['最低溫度'] = dataFrame['最低溫度'].astype(int)
 
+#更改外觀樣式
+style = dataFrame.style.highlight_max(subset=['最高溫度'],axis=0,props="color:white;background-color:red;")
+style = style.highlight_max(subset=['最低溫度'],axis=0,props="color:white;background-color:blue;")
 #顯示標題
 st.title("台灣個縣市氣候:")
 st.subheader("攝氐")
